@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sss</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <h1>TODO-LIST</h1>
+
+        
+            <button id="btnNewNote">
+            </button>
+
+            <button id="btnNewTask">
+                    
+             </button>
+        
+      </header>
+
+      <div id="contentNotes">
+
+        
+          <div class="note">
+            <p>jantar</p>
+            <button class="delNote">X</button>
+          </div>
+          <div class="note">
+            <p>comer</p>
+            <button class="delNote">X</button>
+          </div>        
+        
+
+      </div>
+
+      <div id="contentTasks">
+
+        <div class="task">
+          <input type="checkbox" class="checkTask">
+         <p class="nameTask">Fazer compra</p>
+         <button class="delNote">X</button>
+        </div>
+
+        
+
+        <div class="task">
+          <input type="checkbox" class="checkTask">
+          <p>ESTUDAR</p>    
+          <button class="delNote">X</button>
+         </div>
+      </div>
+
+      <div id="mods">
+        <div id="notes">
+          <button id="noteBtn">Anotaçoes</button>
+        </div>
+
+        <div id="tasks">
+          <button id="taskBtn">TAREFAS</button>
+        </div>
+      </div>
+
+
+
+      <div id="newNote">
+        <input type="text" name="noteTitle" id="noteTitle">
+        
+        <textarea name="noteText" id="noteText" maxlength="50">
+
+        </textarea>
+
+        <button id="btnCancelNote">Cancel</button>
+        <button id="btnNote">New Note</button>
+      </div>
+
+    <div id="newTask">
+      
+      <textarea name="taskText" id="taskText">
+
+      </textarea>
+
+      <button id="btnCancelTask">Cancel</button>
+      <button id="btnTask">New Task</button>
+    </div>
+  </div>  
+    </div>
+
+    
+
+    
+    <script src="js/script.js"></script>
+  </body>
+</html>
