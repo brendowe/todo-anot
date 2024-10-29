@@ -5,6 +5,8 @@ const newNote = document.getElementById("newNote");
 const btnNote = document.getElementById("btnNote");
 const btnTask = document.getElementById("btnTask");
 
+const newTask = document.getElementById("newTask");
+
 const tasks = document.getElementsByClassName("note");
 const deleteButtons = document.querySelectorAll(".delTask");
 const contentTasks = document.getElementById("contentTasks");
@@ -20,6 +22,7 @@ displayNote.addEventListener("click", function (event) {
   btnNewNote.style.display = "block";
   contentTasks.style.display = "none";
   btnNewTask.style.display = "none";
+  newTask.style.display = "none";
 });
 
 displayTask.addEventListener("click", function (event) {
@@ -28,6 +31,7 @@ displayTask.addEventListener("click", function (event) {
   btnNewTask.style.display = "block";
   contentNotes.style.display = "none";
   btnNewNote.style.display = "none";
+  newNote.style.display = 'none';
 });
 
 btnNewNote.addEventListener("click", function (event) {
@@ -68,6 +72,7 @@ function criarTarefa() {
   text.value = "";
 
   deletarNote();
+  salvarDivNoLocalStorage();
 }
 
 function criarTarefa2() {
@@ -83,6 +88,7 @@ function criarTarefa2() {
 
   check();
   deletarNote();
+  salvarDivNoLocalStorage();
 }
 
 function cancelarTarefa() {
@@ -97,6 +103,7 @@ function cancelarTarefa2() {
   let text = document.getElementById("taskText");
   newTask.style.display = "none";
   text.value = "";
+  salvarDivNoLocalStorage();
 }
 
 function deletarNote() {
@@ -104,6 +111,7 @@ function deletarNote() {
   deleteButtons.forEach((button) => {
     button.addEventListener("click", function () {
       this.parentElement.remove();
+      salvarDivNoLocalStorage();
     });
   });
 }
@@ -117,13 +125,46 @@ function check() {
       if (button.checked == true) {
         this.nextElementSibling.style.color = "rgb(27, 240, 44)";
         this.nextElementSibling.style.textDecoration = "line-through";
+        salvarDivNoLocalStorage();
       } else {
         this.nextElementSibling.style.color = "white";
         this.nextElementSibling.style.textDecoration = "none";
+        salvarDivNoLocalStorage();
       }
     });
   });
 }
 
-check();
 
+function salvarDivNoLocalStorage() {
+  const div = document.querySelector('#contentNotes');
+  const div2 = document.querySelector('#contentTasks');
+  
+  const htmlContent = div.innerHTML;
+  const htmlContent2 = div2.innerHTML;
+  
+  localStorage.setItem('conteudoDiv', htmlContent);
+  localStorage.setItem('conteudoDiv2', htmlContent2);
+}
+
+function carregarDivDoLocalStorage() {
+  const div = document.querySelector('#contentNotes');
+  const div2 = document.querySelector('#contentTasks');
+
+  const htmlContent = localStorage.getItem('conteudoDiv');
+  const htmlContent2 = localStorage.getItem('conteudoDiv2');
+  
+  if (htmlContent) {
+      div.innerHTML = htmlContent;
+  }
+
+  if (htmlContent2) {
+    div2.innerHTML = htmlContent2;
+  }
+
+  deletarNote();
+  check();
+
+}
+
+window.onload = carregarDivDoLocalStorage;
