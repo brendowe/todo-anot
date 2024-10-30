@@ -123,11 +123,11 @@ function check() {
   checkTask.forEach((button) => {
     button.addEventListener("click", function () {
       if (button.checked == true) {
-        this.nextElementSibling.style.color = "rgb(27, 240, 44)";
+        this.nextElementSibling.style.color = "#003459";
         this.nextElementSibling.style.textDecoration = "line-through";
         salvarDivNoLocalStorage();
       } else {
-        this.nextElementSibling.style.color = "white";
+        this.nextElementSibling.style.color = "#00a8e8";
         this.nextElementSibling.style.textDecoration = "none";
         salvarDivNoLocalStorage();
       }
