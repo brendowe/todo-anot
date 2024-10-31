@@ -65,7 +65,7 @@ function criarTarefa() {
         <div class="note">
         <h2>${title.value}</h2>
           <p>${text.value}</p>
-          <button class="delNote">X</button>
+          <button class="delNote"></button>
         </div>`;
   newNote.style.display = "none";
   title.value = "";
@@ -81,7 +81,7 @@ function criarTarefa2() {
         <div class="task">
           <input type="checkbox" class="checkTask">
           <p>${text.value}</p> 
-          <button class="delNote">X</button>   
+          <button class="delNote"></button>   
          </div>`);
   newTask.style.display = "none";
   text.value = "";

@@ -12,6 +12,8 @@
         <h1>TODO-LIST</h1>
 
         
+
+        
             <button id="btnNewNote">
             </button>
 
@@ -20,6 +22,16 @@
              </button>
         
       </header>
+
+      <div id="mods">
+        <div id="notes">
+          <button id="noteBtn">ANOTAÇÕES</button>
+        </div>
+
+        <div id="tasks">
+          <button id="taskBtn">TAREFAS</button>
+        </div>
+      </div>
 
       <div id="contentNotes">
 
@@ -33,32 +45,24 @@
       
       </div>
 
-      <div id="mods">
-        <div id="notes">
-          <button id="noteBtn">ANOTAÇÕES</button>
-        </div>
-
-        <div id="tasks">
-          <button id="taskBtn">TAREFAS</button>
-        </div>
-      </div>
+    
 
 
 
       <div id="newNote">
         <input type="text" name="noteTitle" id="noteTitle">
         
-        <textarea name="noteText" id="noteText" maxlength="50">
+        <textarea name="noteText" id="noteText" maxlength="150">
 
         </textarea>
 
-        <button id="btnCancelNote">Cancel</button>
-        <button id="btnNote">New Note</button>
+        <button id="btnCancelNote">CANCEL</button>
+        <button id="btnNote">NEW NOTE</button>
       </div>
 
     <div id="newTask">
       
-      <textarea name="taskText" id="taskText">
+      <textarea name="taskText" id="taskText" maxlength="50">
 
       </textarea>
 
